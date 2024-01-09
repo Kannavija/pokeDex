@@ -1,22 +1,9 @@
-/* function PokemonCard(props.pokemon) {
-  console.log(props.pokemon);
-  const pokemon = pokemonList[1];
-  return (
-    <figure>
-      {pokemon.imgSrc ? (
-        <img src={pokemon.imgSrc} alt={pokemon.name}></img>
-      ) : (
-        <p>???</p>
-      )}
-      <figcaption>{pokemon.name}</figcaption>
-    </figure>
-  );
-}
-export default PokemonCard; */
+import PropTypes from "prop-types";
 
 function PokemonCard(props.pokemon) {
   const {pokemon} = props;
   console.log(props.pokemon);
+
   const pokemon = pokemonList[1];
   return (
     <figure>
@@ -28,6 +15,13 @@ function PokemonCard(props.pokemon) {
       <figcaption>{props.pokemon.name}</figcaption>
     </figure>
   );
+}
+
+PokemonCard.PropTypes = {
+  pokemonList: PropTypes.shape({
+    name: PropTypes.string.isRequired,
+    imgsrc: PropTypes.string,
+  })
 }
 export default PokemonCard;
 
