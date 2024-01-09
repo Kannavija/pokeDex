@@ -1,28 +1,33 @@
-function PokemonCard() {
-    return <figure>
-        <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png" alt="Bulbasaur"/>
-    <figcaption>Bulbasaur</figcaption>
+/* function PokemonCard(props.pokemon) {
+  console.log(props.pokemon);
+  const pokemon = pokemonList[1];
+  return (
+    <figure>
+      {pokemon.imgSrc ? (
+        <img src={pokemon.imgSrc} alt={pokemon.name}></img>
+      ) : (
+        <p>???</p>
+      )}
+      <figcaption>{pokemon.name}</figcaption>
     </figure>
+  );
+}
+export default PokemonCard; */
 
-     if (pokemon.imgSrc === 'true') {
-      const pokemon = pokemonList[0];
-      return <figure>{pokemon.name}
-      <img src = {pokemon.imgSrc} alt= {pokemon.name}/>
-      </figure>}
-  } else if {
-    <p>'???'</p>
-  }
+function PokemonCard(props.pokemon) {
+  const {pokemon} = props;
+  console.log(props.pokemon);
+  const pokemon = pokemonList[1];
+  return (
+    <figure>
+      {pokemon.imgSrc ? (
+        <img src={pokemon.imgSrc} alt={pokemon.name}></img>
+      ) : (
+        <p>???</p>
+      )}
+      <figcaption>{pokemon.name}</figcaption>
+    </figure>
+  );
+}
+export default PokemonCard;
 
-
-const pokemonList = [
-    {
-      name: "bulbasaur",
-      imgSrc:
-        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png",
-    },
-    {
-      name: "mew",
-    },
-  ];
-
-  export default PokemonCard;
