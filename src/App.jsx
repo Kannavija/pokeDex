@@ -1,9 +1,9 @@
 import PokemonCard from "./components/PokemonCard";
-function App(props) {
-  const pokemon = pokemonList[0].props.name 
+function App() {
+  const pokemon = pokemonList[0]
   return (
     <div>
-      <PokemonCard />
+      <PokemonCard pokemon={pokemon} />
     </div>
   );
 }
