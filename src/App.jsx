@@ -1,7 +1,7 @@
 import PokemonCard from "./components/PokemonCard";
 import {useState} from "react";
 
-function App(props) {
+function App() {
   const [pokemonIndex, setpokemonIndex]= useState(0);
   const previous = (event) => {
     console.log(event.target);
@@ -21,8 +21,8 @@ function App(props) {
       }
     }
 
-    let pokemon = pokemonList[0].props.name 
-    console.log(pokemon, 'pokemon');
+    let pokemon = pokemonList[0]
+    /* console.log(pokemon, 'pokemon'); */
   return (
     <>
     <div>
