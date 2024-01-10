@@ -1,27 +1,27 @@
 import PropTypes from "prop-types";
 
-function PokemonCard(props.pokemon) {
-  const {pokemon} = props;
-  console.log(props.pokemon);
+function PokemonCard(props) {
+  
+    const {pokemon}= props
+    console.log(props)
+    return (
+      <figure>
+        {pokemon.imgSrc ? (
+          <img src={pokemon.imgSrc} alt={pokemon.name} />
+        ) : (
+          <p>???</p>
+        )}
+        <figcaption>{pokemon.name}</figcaption>
+      </figure>
+    );
+  }
 
-  const pokemon = pokemonList[1];
-  return (
-    <figure>
-      {pokemon.imgSrc ? (
-        <img src={props.pokemon.imgSrc} alt={props.pokemon.name}></img>
-      ) : (
-        <p>???</p>
-      )}
-      <figcaption>{props.pokemon.name}</figcaption>
-    </figure>
-  );
-}
-
-PokemonCard.PropTypes = {
-  pokemonList: PropTypes.shape({
-    name: PropTypes.string.isRequired,
-    imgsrc: PropTypes.string,
-  })
-}
-export default PokemonCard;
-
+  PokemonCard.propTypes = {
+    pokemon: PropTypes.shape({
+      name: PropTypes.string.isRequired,
+      imgSrc: PropTypes.string,
+    })
+    .isRequired,
+  };
+  
+  export default PokemonCard;
