@@ -1,45 +1,30 @@
 import PokemonCard from "./components/PokemonCard";
-import {useState} from "react";
+import { useState } from "react";
 
 function App() {
-  const [pokemonIndex, setpokemonIndex]= useState(0);
-  const previous = (event) => {
-    console.log(event.target);
-  
-    const next = (event) => {
-      console.log(event.target);
+  const [pokemonIndex, setPokemonIndex] = useState(0);
 
-    function previous() {
-      if (pokemonIndex > 0) {
-        setpokemonIndex(pokemonIndex - 1);
-      }
+  let previousClic = () => {
+    if (pokemonIndex > 0) {
+    setPokemonIndex(pokemonIndex - 1)
     }
+  }
 
-    function next() {
-      if (pokemonIndex < pokemonList.length - 1) {
-        setpokemonIndex(pokemonIndex + 1);         
-      }
-    }
+  let nextClic = () => {
+    if (pokemonIndex < pokemonList.length - 1)
+    setPokemonIndex(pokemonIndex + 1)
+  }
 
-    let pokemon = pokemonList[0]
-    /* console.log(pokemon, 'pokemon'); */
+  const pokemon = pokemonList[pokemonIndex]
   return (
-    <>
     <div>
-      <PokemonCard />
+      <PokemonCard pokemon={pokemon} />
+      <button onClick={previousClic}>precedent</button>
+      <button onClick={nextClic}>suivant</button>
+      
     </div>
-    <h1>Pokémon Index: {pokemonIndex}</h1>
-      {pokemonIndex > 0 && (
-        <button onClick={previous}>Précédent</button>
-      )}
-      {pokemonIndex < pokemonList.length - 1 && (
-        <button onClick={next}>Suivant</button>
-      )}
-    </>
   );
 }
-}
-
 export default App;
 
 const pokemonList = [
@@ -67,4 +52,5 @@ const pokemonList = [
       name: "mew",
     },
   ];
+
 
