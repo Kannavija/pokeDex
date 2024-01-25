@@ -5,13 +5,13 @@ import { useState } from "react";
 import  { useEffect } from "react"
 
 function App() {
-  const [pokemonIndex, setPokemonIndex] = useState(0);
   useEffect(
     () => {
-    console.log();
+    alert("Hello Pokemon Trainer :)");
    }, 
    []
 );
+  const [pokemonIndex, setPokemonIndex] = useState(0);
   return (
     <div>
       <PokemonCard pokemon={pokemonList[pokemonIndex]} />
@@ -47,5 +47,3 @@ const pokemonList = [
       name: "mew",
     },
   ];
-
-
